@@ -72,19 +72,20 @@ class JNTTFlaskCommon():
     """Common tests for flask
     """
 
-    def test_001_server_is_up(self):
+    def assertEndpoint(self, endpoint='static'):
+        self.assertTrue('static' in self.get_routes())
+
+    def test_001_app_is_loaded(self):
         self.assertEqual(type(self.app.extensions['cache']), type(Cache()))
         self.assertEqual(type(self.app.extensions['bower']), type(Bower()))
-        routes = self.get_routes()
-        print routes
-        self.assertTrue('bower.serve' in routes)
-        self.assertTrue('static' in routes)
+        print self.get_routes()
+        self.assertEndpoint('bower.serve')
+        self.assertEndpoint('static')
 
 class JNTTFlaskLive(JNTTBase, LiveServerTestCase, JNTTFlaskMain):
     """Test the flask server in live
     """
     flask_conf = "tests/data/janitoo_flask.conf"
-
 
 class JNTTFlaskLiveCommon():
     """Common tests for flask server in live
@@ -94,4 +95,3 @@ class JNTTFlaskLiveCommon():
         response = urllib2.urlopen(self.get_server_url()+url, timeout=60)
         print response
         self.assertEqual(response.code, code)
-
