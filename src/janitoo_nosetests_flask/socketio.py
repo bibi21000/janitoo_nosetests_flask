@@ -33,8 +33,6 @@ from flask_socketio import SocketIO, send, emit, join_room, leave_room
 from janitoo_nosetests import JNTTBase
 
 from janitoo.options import JNTOptions
-from janitoo_db.base import Base, create_db_engine
-from janitoo_db.migrate import Config as alConfig, collect_configs, janitoo_config
 
 
 class JNTTSocketIO(JNTTBase):
