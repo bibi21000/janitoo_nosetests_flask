@@ -87,10 +87,10 @@ setup(
     package_dir = { '': 'src' },
     install_requires=[
                      'janitoo_nosetests',
-                     'Flask-Testing',
                      'urllib3',
                      'pygments',
                     ],
+                     #~ 'Flask-Testing',
     dependency_links = [
       'https://github.com/bibi21000/janitoo_nosetests/archive/master.zip#egg=janitoo_nosetests',
     ],

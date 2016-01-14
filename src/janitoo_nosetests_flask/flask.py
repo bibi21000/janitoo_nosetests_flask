@@ -35,18 +35,40 @@ import urllib2
 from flask_bower import Bower
 from flask_cache import Cache
 
-from flask_testing import TestCase, LiveServerTestCase
-
 from janitoo_nosetests import JNTTBase
 
 from janitoo.options import JNTOptions
 from janitoo_db.base import Base, create_db_engine
 from janitoo_db.migrate import Config as alConfig, collect_configs, janitoo_config
 
-
-class JNTTFlaskMain():
-    """Common function for flask
+class JNTTFlask(JNTTBase):
+    """Test the flask
     """
+    flask_conf = "tests/data/janitoo_flask.conf"
+
+    def setUp(self):
+        JNTTBase.setUp(self)
+        self.app = self.create_app()
+        self.client = self.app.test_client()
+        # We need to create a context in order for extensions to catch up
+        self._ctx = self.app.test_request_context()
+        self._ctx.push()
+
+    def tearDown(self):
+        if getattr(self, '_ctx', None) is not None:
+            self._ctx.pop()
+            del self._ctx
+        self.client = None
+        self.app = None
+        JNTTBase.tearDown(self)
+
+    def assertUrl(self, url='/', code="200 OK"):
+        response = self.client.get(url)
+        print response
+        self.assertEquals(response.status, code)
+
+    def assertEndpoint(self, endpoint='static'):
+        self.assertTrue('static' in self.get_routes())
 
     def get_routes(self):
         res = {}
@@ -63,17 +85,9 @@ class JNTTFlaskMain():
         for line in sorted(output):
             print(line)
 
-class JNTTFlask(JNTTBase, TestCase, JNTTFlaskMain):
-    """Test the flask
-    """
-    flask_conf = "tests/data/janitoo_flask.conf"
-
 class JNTTFlaskCommon():
     """Common tests for flask
     """
-
-    def assertEndpoint(self, endpoint='static'):
-        self.assertTrue('static' in self.get_routes())
 
     def test_001_app_is_loaded(self):
         self.assertEqual(type(self.app.extensions['cache']), type(Cache()))
@@ -82,16 +96,7 @@ class JNTTFlaskCommon():
         self.assertEndpoint('bower.serve')
         self.assertEndpoint('static')
 
-class JNTTFlaskLive(JNTTBase, LiveServerTestCase, JNTTFlaskMain):
-    """Test the flask server in live
-    """
-    flask_conf = "tests/data/janitoo_flask.conf"
+    def test_011_home_is_up(self):
+        self.list_routes()
+        self.assertUrl('/', "200 OK")
 
-class JNTTFlaskLiveCommon():
-    """Common tests for flask server in live
-    """
-
-    def assertUrl(self, url='/', code=200):
-        response = urllib2.urlopen(self.get_server_url()+url, timeout=60)
-        print response
-        self.assertEqual(response.code, code)
