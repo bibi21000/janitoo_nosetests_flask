@@ -86,13 +86,6 @@ class JNTTFlaskCommon():
     """Common tests for flask
     """
 
-    def test_001_app_is_loaded(self):
-        self.assertEqual(type(self.app.extensions['cache']), type(Cache()))
-        self.assertEqual(type(self.app.extensions['bower']), type(Bower()))
-        print self.get_routes()
-        self.assertEndpoint('bower.serve')
-        self.assertEndpoint('static')
-
     def test_011_home_is_up(self):
         self.list_routes()
         self.assertUrl('/', "200 OK")
