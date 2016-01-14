@@ -34,7 +34,6 @@ from janitoo_nosetests import JNTTBase
 
 from janitoo.options import JNTOptions
 
-
 class JNTTSocketIO(JNTTBase):
     """Test the flask
     """
