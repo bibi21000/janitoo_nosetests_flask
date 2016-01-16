@@ -34,7 +34,6 @@ from janitoo_nosetests import JNTTBase
 
 from janitoo.options import JNTOptions
 
-socketio = None
 
 class JNTTSocketIO(JNTTBase):
     """Test the flask
@@ -46,8 +45,6 @@ class JNTTSocketIO(JNTTBase):
         JNTTBase.setUp(self)
         self.app = self.create_app()
         self.socketio = self.app.extensions['socketio']
-        global socketio
-        socketio = self.socketio
         # We need to create a context in order for extensions to catch up
         self._ctx = self.app.test_request_context()
         self._ctx.push()
