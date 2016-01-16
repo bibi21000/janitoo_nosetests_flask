@@ -52,11 +52,18 @@ class JNTTFlask(JNTTBase):
         self._ctx.push()
 
     def tearDown(self):
+        time.sleep(10)
+        print "Stop"
+        try:
+            self.app.extensions['janitoo'].stop_listener()
+        except RuntimeError:
+            pass
+        del self.app.extensions['janitoo']
+        self.app = None
         if getattr(self, '_ctx', None) is not None:
             self._ctx.pop()
             del self._ctx
         self.client = None
-        self.app = None
         JNTTBase.tearDown(self)
 
     def assertUrl(self, url='/', code="200 OK"):
