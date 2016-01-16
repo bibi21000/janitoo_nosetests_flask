@@ -34,27 +34,69 @@ from janitoo_nosetests import JNTTBase
 
 from janitoo.options import JNTOptions
 
+socketio = None
+
 class JNTTSocketIO(JNTTBase):
     """Test the flask
     """
     flask_conf = "tests/data/janitoo_flask.conf"
+    namespace = "/janitoo"
 
-    def create_app(self):
-        """
-        Create your Flask app here, with any
-        configuration you need.
-        """
-        raise NotImplementedError
+    def setUp(self):
+        JNTTBase.setUp(self)
+        self.app = self.create_app()
+        self.socketio = self.app.extensions['socketio']
+        global socketio
+        socketio = self.socketio
+        # We need to create a context in order for extensions to catch up
+        self._ctx = self.app.test_request_context()
+        self._ctx.push()
+        self.app.extensions['janitoo'].start_listener()
+        self.client = None
 
-    def assertConnect(self, namespace="/janitoo"):
-        app, socketio = self.create_app()
-        client = socketio.test_client(app, namespace=namespace)
-        received = client.get_received(namespace)
-        self.assertEqual(len(received), 1)
-        self.assertEqual(received[0]['args'], ({'data': 'Connected'},))
-        client.disconnect(namespace)
+    def tearDown(self):
+        time.sleep(10)
+        try:
+            self.client.disconnect(self.namespace)
+        except RuntimeError:
+            pass
+        except AttributeError:
+            pass
+        time.sleep(1)
+        self.client = None
+        print "Stop"
+        try:
+            self.app.extensions['janitoo'].stop_listener()
+        except RuntimeError:
+            pass
+        except AttributeError:
+            pass
+        del self.app.extensions['janitoo']
+        try:
+            self.app.extensions['socketio'].stop()
+        except RuntimeError:
+            pass
+        except AttributeError:
+            pass
+        del self.app.extensions['socketio']
+        self.app = None
+        if getattr(self, '_ctx', None) is not None:
+            self._ctx.pop()
+            del self._ctx
+        JNTTBase.tearDown(self)
+
+    def connect(self):
+        time.sleep(1)
+        self.client = self.socketio.test_client(self.app, namespace=self.namespace)
+        print 'client.sid %s' % self.client.sid
+        time.sleep(1)
 
 class JNTTSocketIOCommon():
     """Common tests for flask
     """
-    pass
+    def test_001_server_connect(self):
+        self.connect()
+        received = self.client.get_received(self.namespace)
+        print received
+        self.assertTrue(len(received) >= 1)
+        self.assertEqual(received[0]['args'], [{'data': 'Connected'}])

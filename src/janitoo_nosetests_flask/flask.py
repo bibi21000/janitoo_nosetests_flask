@@ -54,6 +54,7 @@ class JNTTFlask(JNTTBase):
     def tearDown(self):
         time.sleep(10)
         print "Stop"
+        self.client = None
         try:
             self.app.extensions['janitoo'].stop_listener()
         except RuntimeError:
@@ -63,7 +64,6 @@ class JNTTFlask(JNTTBase):
         if getattr(self, '_ctx', None) is not None:
             self._ctx.pop()
             del self._ctx
-        self.client = None
         JNTTBase.tearDown(self)
 
     def assertUrl(self, url='/', code="200 OK"):
