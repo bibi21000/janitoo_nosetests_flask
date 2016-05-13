@@ -1,11 +1,9 @@
-===============
-The README file
-===============
+=======================
+Janitoo_nosetests_flask
+=======================
 
-This file will be published on your github account
+Nosetests frameworks for developping Flask webapps in Janitoo
 
-
-A section
-=========
-A text in this section.
-
+Documentation
+=============
+You can browse online documentation here : https://bibi21000.github.io/janitoo_nosetests_flask/.
