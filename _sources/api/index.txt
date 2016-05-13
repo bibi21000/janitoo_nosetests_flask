@@ -1,0 +1,30 @@
+janitoo_nosetests_flask package
+===============================
+
+Submodules
+----------
+
+janitoo_nosetests_flask.flask module
+------------------------------------
+
+.. automodule:: janitoo_nosetests_flask.flask
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+janitoo_nosetests_flask.socketio module
+---------------------------------------
+
+.. automodule:: janitoo_nosetests_flask.socketio
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: janitoo_nosetests_flask
+    :members:
+    :undoc-members:
+    :show-inheritance:

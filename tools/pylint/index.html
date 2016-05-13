@@ -1,0 +1,957 @@
+<html>
+<body>
+<div>
+<h1>Report</h1>
+<p>227 statements analysed.</p><div>
+<h2>Statistics by type</h2>
+<table>
+<tr class="header">
+<th>type</th>
+<th>number</th>
+<th>old number</th>
+<th>difference</th>
+<th>%documented</th>
+<th>%badname</th>
+</tr>
+<tr class="even">
+<td>module</td>
+<td>3</td>
+<td>NC</td>
+<td>NC</td>
+<td>66.67</td>
+<td>0.00</td>
+</tr>
+<tr class="odd">
+<td>class</td>
+<td>5</td>
+<td>NC</td>
+<td>NC</td>
+<td>100.00</td>
+<td>0.00</td>
+</tr>
+<tr class="even">
+<td>method</td>
+<td>30</td>
+<td>NC</td>
+<td>NC</td>
+<td>70.00</td>
+<td>53.33</td>
+</tr>
+<tr class="odd">
+<td>function</td>
+<td>0</td>
+<td>NC</td>
+<td>NC</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</table>
+</div>
+<div>
+<h2>External dependencies</h2>
+<pre>flask_bower (janitoo_nosetests_flask.flask)
+flask_cache (janitoo_nosetests_flask.flask)
+flask_socketio (janitoo_nosetests_flask.socketio)
+janitoo 
+  \-dhcp (janitoo_nosetests_flask)
+  \-mqtt (janitoo_nosetests_flask)
+  \-options (janitoo_nosetests_flask.flask,janitoo_nosetests_flask.socketio)
+  \-runner (janitoo_nosetests_flask)
+  \-utils (janitoo_nosetests_flask)
+janitoo_db 
+  \-base (janitoo_nosetests_flask.flask)
+  \-migrate (janitoo_nosetests_flask.flask)
+janitoo_nosetests (janitoo_nosetests_flask.flask,janitoo_nosetests_flask.socketio)
+mock (janitoo_nosetests_flask)
+nose 
+  \-plugins 
+    \-skip (janitoo_nosetests_flask)
+pkg_resources (janitoo_nosetests_flask)</pre></div>
+<div>
+<h2>Raw metrics</h2>
+<table>
+<tr class="header">
+<th>type</th>
+<th>number</th>
+<th>%</th>
+<th>previous</th>
+<th>difference</th>
+</tr>
+<tr class="even">
+<td>code</td>
+<td>285</td>
+<td>76.82</td>
+<td>NC</td>
+<td>NC</td>
+</tr>
+<tr class="odd">
+<td>docstring</td>
+<td>44</td>
+<td>11.86</td>
+<td>NC</td>
+<td>NC</td>
+</tr>
+<tr class="even">
+<td>comment</td>
+<td>6</td>
+<td>1.62</td>
+<td>NC</td>
+<td>NC</td>
+</tr>
+<tr class="odd">
+<td>empty</td>
+<td>36</td>
+<td>9.70</td>
+<td>NC</td>
+<td>NC</td>
+</tr>
+</table>
+</div>
+<div>
+<h2>Duplication</h2>
+<table>
+<tr class="header">
+<th>&#160;</th>
+<th>now</th>
+<th>previous</th>
+<th>difference</th>
+</tr>
+<tr class="even">
+<th>nb duplicated lines</th>
+<td>42</td>
+<td>NC</td>
+<td>NC</td>
+</tr>
+<tr class="odd">
+<th>percent duplicated lines</th>
+<td>10.769</td>
+<td>NC</td>
+<td>NC</td>
+</tr>
+</table>
+</div>
+<div>
+<h2>Messages by category</h2>
+<table>
+<tr class="header">
+<th>type</th>
+<th>number</th>
+<th>previous</th>
+<th>difference</th>
+</tr>
+<tr class="even">
+<td>convention</td>
+<td>40</td>
+<td>NC</td>
+<td>NC</td>
+</tr>
+<tr class="odd">
+<td>refactor</td>
+<td>6</td>
+<td>NC</td>
+<td>NC</td>
+</tr>
+<tr class="even">
+<td>warning</td>
+<td>32</td>
+<td>NC</td>
+<td>NC</td>
+</tr>
+<tr class="odd">
+<td>error</td>
+<td>8</td>
+<td>NC</td>
+<td>NC</td>
+</tr>
+</table>
+</div>
+<div>
+<h2>% errors / warnings by module</h2>
+<table>
+<tr class="header">
+<th>module</th>
+<th>error</th>
+<th>warning</th>
+<th>refactor</th>
+<th>convention</th>
+</tr>
+<tr class="even">
+<td>janitoo_nosetests_flask.socketio</td>
+<td>62.50</td>
+<td>34.38</td>
+<td>0.00</td>
+<td>7.50</td>
+</tr>
+<tr class="odd">
+<td>janitoo_nosetests_flask.flask</td>
+<td>37.50</td>
+<td>46.88</td>
+<td>33.33</td>
+<td>22.50</td>
+</tr>
+<tr class="even">
+<td>janitoo_nosetests_flask</td>
+<td>0.00</td>
+<td>18.75</td>
+<td>66.67</td>
+<td>70.00</td>
+</tr>
+</table>
+</div>
+<div>
+<h2>Messages</h2>
+<table>
+<tr class="header">
+<th>message id</th>
+<th>occurrences</th>
+</tr>
+<tr class="even">
+<td>unused-import</td>
+<td>23</td>
+</tr>
+<tr class="odd">
+<td>invalid-name</td>
+<td>17</td>
+</tr>
+<tr class="even">
+<td>missing-docstring</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>bad-classmethod-argument</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>no-member</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>no-self-use</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>unused-variable</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>old-style-class</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>no-init</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>eval-used</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>duplicate-code</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>unused-argument</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>superfluous-parens</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>bare-except</td>
+<td>1</td>
+</tr>
+</table>
+</div>
+<div>
+<h2>Global evaluation</h2>
+Your code has been rated at 4.80/10</div>
+<div>
+<h2>Messages</h2>
+<table>
+<tr class="header">
+<th>type</th>
+<th>module</th>
+<th>object</th>
+<th>line</th>
+<th>col_offset</th>
+<th>message</th>
+</tr>
+<tr class="even">
+<td>convention</td>
+<td>janitoo_nosetests_flask</td>
+<td>&#160;</td>
+<td>1</td>
+<td>0</td>
+<td>Missing module docstring</td>
+</tr>
+<tr class="odd">
+<td>warning</td>
+<td>janitoo_nosetests_flask</td>
+<td>&#160;</td>
+<td>26</td>
+<td>0</td>
+<td>No exception type(s) specified</td>
+</tr>
+<tr class="even">
+<td>convention</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.setUpClass</td>
+<td>59</td>
+<td>4</td>
+<td>Class method setUpClass should have 'cls' as first argument</td>
+</tr>
+<tr class="odd">
+<td>warning</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.setUpClass</td>
+<td>62</td>
+<td>24</td>
+<td>Use of eval</td>
+</tr>
+<tr class="even">
+<td>warning</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.setUpClass</td>
+<td>64</td>
+<td>30</td>
+<td>Use of eval</td>
+</tr>
+<tr class="odd">
+<td>convention</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.tearDownClass</td>
+<td>69</td>
+<td>4</td>
+<td>Class method tearDownClass should have 'cls' as first argument</td>
+</tr>
+<tr class="even">
+<td>warning</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.tearDownClass</td>
+<td>73</td>
+<td>26</td>
+<td>Unused variable 'exc'</td>
+</tr>
+<tr class="odd">
+<td>warning</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.setUp</td>
+<td>79</td>
+<td>26</td>
+<td>Unused variable 'exc'</td>
+</tr>
+<tr class="even">
+<td>warning</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.tearDown</td>
+<td>92</td>
+<td>26</td>
+<td>Unused variable 'exc'</td>
+</tr>
+<tr class="odd">
+<td>convention</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.skipManualTest</td>
+<td>96</td>
+<td>4</td>
+<td>Invalid method name "skipManualTest"</td>
+</tr>
+<tr class="even">
+<td>convention</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.skipManualTest</td>
+<td>96</td>
+<td>4</td>
+<td>Class method skipManualTest should have 'cls' as first argument</td>
+</tr>
+<tr class="odd">
+<td>convention</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.skipTest</td>
+<td>103</td>
+<td>4</td>
+<td>Class method skipTest should have 'cls' as first argument</td>
+</tr>
+<tr class="even">
+<td>convention</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.skipTravisTest</td>
+<td>110</td>
+<td>4</td>
+<td>Invalid method name "skipTravisTest"</td>
+</tr>
+<tr class="odd">
+<td>convention</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.skipTravisTest</td>
+<td>110</td>
+<td>4</td>
+<td>Class method skipTravisTest should have 'cls' as first argument</td>
+</tr>
+<tr class="even">
+<td>convention</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.onlyTravisTest</td>
+<td>117</td>
+<td>4</td>
+<td>Invalid method name "onlyTravisTest"</td>
+</tr>
+<tr class="odd">
+<td>convention</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.onlyTravisTest</td>
+<td>117</td>
+<td>4</td>
+<td>Class method onlyTravisTest should have 'cls' as first argument</td>
+</tr>
+<tr class="even">
+<td>convention</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.skipRasperryTest</td>
+<td>124</td>
+<td>4</td>
+<td>Invalid method name "skipRasperryTest"</td>
+</tr>
+<tr class="odd">
+<td>convention</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.skipRasperryTest</td>
+<td>124</td>
+<td>4</td>
+<td>Class method skipRasperryTest should have 'cls' as first argument</td>
+</tr>
+<tr class="even">
+<td>convention</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.onlyRasperryTest</td>
+<td>131</td>
+<td>4</td>
+<td>Invalid method name "onlyRasperryTest"</td>
+</tr>
+<tr class="odd">
+<td>convention</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.onlyRasperryTest</td>
+<td>131</td>
+<td>4</td>
+<td>Class method onlyRasperryTest should have 'cls' as first argument</td>
+</tr>
+<tr class="even">
+<td>convention</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.skipNoPingTest</td>
+<td>138</td>
+<td>4</td>
+<td>Invalid method name "skipNoPingTest"</td>
+</tr>
+<tr class="odd">
+<td>convention</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.skipNoPingTest</td>
+<td>138</td>
+<td>4</td>
+<td>Invalid argument name "ip"</td>
+</tr>
+<tr class="even">
+<td>convention</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.skipNoPingTest</td>
+<td>138</td>
+<td>4</td>
+<td>Class method skipNoPingTest should have 'cls' as first argument</td>
+</tr>
+<tr class="odd">
+<td>convention</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.wipTest</td>
+<td>146</td>
+<td>4</td>
+<td>Invalid method name "wipTest"</td>
+</tr>
+<tr class="even">
+<td>convention</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.wipTest</td>
+<td>146</td>
+<td>4</td>
+<td>Class method wipTest should have 'cls' as first argument</td>
+</tr>
+<tr class="odd">
+<td>convention</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.touchFile</td>
+<td>151</td>
+<td>4</td>
+<td>Invalid method name "touchFile"</td>
+</tr>
+<tr class="even">
+<td>refactor</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.touchFile</td>
+<td>151</td>
+<td>4</td>
+<td>Method could be a function</td>
+</tr>
+<tr class="odd">
+<td>convention</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.rmFile</td>
+<td>157</td>
+<td>4</td>
+<td>Invalid method name "rmFile"</td>
+</tr>
+<tr class="even">
+<td>refactor</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.rmFile</td>
+<td>157</td>
+<td>4</td>
+<td>Method could be a function</td>
+</tr>
+<tr class="odd">
+<td>convention</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.assertFile</td>
+<td>163</td>
+<td>4</td>
+<td>Invalid method name "assertFile"</td>
+</tr>
+<tr class="even">
+<td>convention</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.mkDir</td>
+<td>168</td>
+<td>4</td>
+<td>Invalid method name "mkDir"</td>
+</tr>
+<tr class="odd">
+<td>refactor</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.mkDir</td>
+<td>168</td>
+<td>4</td>
+<td>Method could be a function</td>
+</tr>
+<tr class="even">
+<td>convention</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.rmDir</td>
+<td>178</td>
+<td>4</td>
+<td>Invalid method name "rmDir"</td>
+</tr>
+<tr class="odd">
+<td>refactor</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.rmDir</td>
+<td>178</td>
+<td>4</td>
+<td>Method could be a function</td>
+</tr>
+<tr class="even">
+<td>convention</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.startServer</td>
+<td>186</td>
+<td>4</td>
+<td>Invalid method name "startServer"</td>
+</tr>
+<tr class="odd">
+<td>convention</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.startServer</td>
+<td>186</td>
+<td>4</td>
+<td>Missing method docstring</td>
+</tr>
+<tr class="even">
+<td>convention</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.stopServer</td>
+<td>189</td>
+<td>4</td>
+<td>Invalid method name "stopServer"</td>
+</tr>
+<tr class="odd">
+<td>convention</td>
+<td>janitoo_nosetests_flask</td>
+<td>JNTTBase.stopServer</td>
+<td>189</td>
+<td>4</td>
+<td>Missing method docstring</td>
+</tr>
+<tr class="even">
+<td>error</td>
+<td>janitoo_nosetests_flask.socketio</td>
+<td>JNTTSocketIO.setUp</td>
+<td>46</td>
+<td>19</td>
+<td>Instance of 'JNTTSocketIO' has no 'create_app' member</td>
+</tr>
+<tr class="odd">
+<td>convention</td>
+<td>janitoo_nosetests_flask.socketio</td>
+<td>JNTTSocketIO.connect</td>
+<td>85</td>
+<td>4</td>
+<td>Missing method docstring</td>
+</tr>
+<tr class="even">
+<td>warning</td>
+<td>janitoo_nosetests_flask.socketio</td>
+<td>JNTTSocketIOCommon</td>
+<td>91</td>
+<td>0</td>
+<td>Class has no __init__ method</td>
+</tr>
+<tr class="odd">
+<td>convention</td>
+<td>janitoo_nosetests_flask.socketio</td>
+<td>JNTTSocketIOCommon</td>
+<td>91</td>
+<td>0</td>
+<td>Old-style class defined.</td>
+</tr>
+<tr class="even">
+<td>convention</td>
+<td>janitoo_nosetests_flask.socketio</td>
+<td>JNTTSocketIOCommon.test_001_server_connect</td>
+<td>94</td>
+<td>4</td>
+<td>Missing method docstring</td>
+</tr>
+<tr class="odd">
+<td>error</td>
+<td>janitoo_nosetests_flask.socketio</td>
+<td>JNTTSocketIOCommon.test_001_server_connect</td>
+<td>95</td>
+<td>8</td>
+<td>Instance of 'JNTTSocketIOCommon' has no 'connect' member</td>
+</tr>
+<tr class="even">
+<td>error</td>
+<td>janitoo_nosetests_flask.socketio</td>
+<td>JNTTSocketIOCommon.test_001_server_connect</td>
+<td>96</td>
+<td>19</td>
+<td>Instance of 'JNTTSocketIOCommon' has no 'client' member</td>
+</tr>
+<tr class="odd">
+<td>error</td>
+<td>janitoo_nosetests_flask.socketio</td>
+<td>JNTTSocketIOCommon.test_001_server_connect</td>
+<td>96</td>
+<td>44</td>
+<td>Instance of 'JNTTSocketIOCommon' has no 'namespace' member</td>
+</tr>
+<tr class="even">
+<td>error</td>
+<td>janitoo_nosetests_flask.socketio</td>
+<td>JNTTSocketIOCommon.test_001_server_connect</td>
+<td>98</td>
+<td>8</td>
+<td>Instance of 'JNTTSocketIOCommon' has no 'assertTrue' member</td>
+</tr>
+<tr class="odd">
+<td>warning</td>
+<td>janitoo_nosetests_flask.socketio</td>
+<td>&#160;</td>
+<td>26</td>
+<td>0</td>
+<td>Unused import sys</td>
+</tr>
+<tr class="even">
+<td>warning</td>
+<td>janitoo_nosetests_flask.socketio</td>
+<td>&#160;</td>
+<td>26</td>
+<td>0</td>
+<td>Unused import os</td>
+</tr>
+<tr class="odd">
+<td>warning</td>
+<td>janitoo_nosetests_flask.socketio</td>
+<td>&#160;</td>
+<td>27</td>
+<td>0</td>
+<td>Unused import datetime</td>
+</tr>
+<tr class="even">
+<td>warning</td>
+<td>janitoo_nosetests_flask.socketio</td>
+<td>&#160;</td>
+<td>28</td>
+<td>0</td>
+<td>Unused import unittest</td>
+</tr>
+<tr class="odd">
+<td>warning</td>
+<td>janitoo_nosetests_flask.socketio</td>
+<td>&#160;</td>
+<td>31</td>
+<td>0</td>
+<td>Unused SocketIO imported from flask_socketio</td>
+</tr>
+<tr class="even">
+<td>warning</td>
+<td>janitoo_nosetests_flask.socketio</td>
+<td>&#160;</td>
+<td>31</td>
+<td>0</td>
+<td>Unused leave_room imported from flask_socketio</td>
+</tr>
+<tr class="odd">
+<td>warning</td>
+<td>janitoo_nosetests_flask.socketio</td>
+<td>&#160;</td>
+<td>31</td>
+<td>0</td>
+<td>Unused send imported from flask_socketio</td>
+</tr>
+<tr class="even">
+<td>warning</td>
+<td>janitoo_nosetests_flask.socketio</td>
+<td>&#160;</td>
+<td>31</td>
+<td>0</td>
+<td>Unused emit imported from flask_socketio</td>
+</tr>
+<tr class="odd">
+<td>warning</td>
+<td>janitoo_nosetests_flask.socketio</td>
+<td>&#160;</td>
+<td>31</td>
+<td>0</td>
+<td>Unused join_room imported from flask_socketio</td>
+</tr>
+<tr class="even">
+<td>warning</td>
+<td>janitoo_nosetests_flask.socketio</td>
+<td>&#160;</td>
+<td>35</td>
+<td>0</td>
+<td>Unused JNTOptions imported from janitoo.options</td>
+</tr>
+<tr class="odd">
+<td>convention</td>
+<td>janitoo_nosetests_flask.flask</td>
+<td>&#160;</td>
+<td>90</td>
+<td>0</td>
+<td>Unnecessary parens after u'print' keyword</td>
+</tr>
+<tr class="even">
+<td>error</td>
+<td>janitoo_nosetests_flask.flask</td>
+<td>JNTTFlask.setUp</td>
+<td>48</td>
+<td>19</td>
+<td>Instance of 'JNTTFlask' has no 'create_app' member</td>
+</tr>
+<tr class="odd">
+<td>convention</td>
+<td>janitoo_nosetests_flask.flask</td>
+<td>JNTTFlask.assertUrl</td>
+<td>69</td>
+<td>4</td>
+<td>Invalid method name "assertUrl"</td>
+</tr>
+<tr class="even">
+<td>convention</td>
+<td>janitoo_nosetests_flask.flask</td>
+<td>JNTTFlask.assertUrl</td>
+<td>69</td>
+<td>4</td>
+<td>Missing method docstring</td>
+</tr>
+<tr class="odd">
+<td>convention</td>
+<td>janitoo_nosetests_flask.flask</td>
+<td>JNTTFlask.assertEndpoint</td>
+<td>74</td>
+<td>4</td>
+<td>Invalid method name "assertEndpoint"</td>
+</tr>
+<tr class="even">
+<td>convention</td>
+<td>janitoo_nosetests_flask.flask</td>
+<td>JNTTFlask.assertEndpoint</td>
+<td>74</td>
+<td>4</td>
+<td>Missing method docstring</td>
+</tr>
+<tr class="odd">
+<td>warning</td>
+<td>janitoo_nosetests_flask.flask</td>
+<td>JNTTFlask.assertEndpoint</td>
+<td>74</td>
+<td>29</td>
+<td>Unused argument 'endpoint'</td>
+</tr>
+<tr class="even">
+<td>convention</td>
+<td>janitoo_nosetests_flask.flask</td>
+<td>JNTTFlask.get_routes</td>
+<td>77</td>
+<td>4</td>
+<td>Missing method docstring</td>
+</tr>
+<tr class="odd">
+<td>convention</td>
+<td>janitoo_nosetests_flask.flask</td>
+<td>JNTTFlask.list_routes</td>
+<td>83</td>
+<td>4</td>
+<td>Missing method docstring</td>
+</tr>
+<tr class="even">
+<td>warning</td>
+<td>janitoo_nosetests_flask.flask</td>
+<td>JNTTFlaskCommon</td>
+<td>92</td>
+<td>0</td>
+<td>Class has no __init__ method</td>
+</tr>
+<tr class="odd">
+<td>convention</td>
+<td>janitoo_nosetests_flask.flask</td>
+<td>JNTTFlaskCommon</td>
+<td>92</td>
+<td>0</td>
+<td>Old-style class defined.</td>
+</tr>
+<tr class="even">
+<td>convention</td>
+<td>janitoo_nosetests_flask.flask</td>
+<td>JNTTFlaskCommon.test_011_home_is_up</td>
+<td>96</td>
+<td>4</td>
+<td>Missing method docstring</td>
+</tr>
+<tr class="odd">
+<td>error</td>
+<td>janitoo_nosetests_flask.flask</td>
+<td>JNTTFlaskCommon.test_011_home_is_up</td>
+<td>97</td>
+<td>8</td>
+<td>Instance of 'JNTTFlaskCommon' has no 'list_routes' member</td>
+</tr>
+<tr class="even">
+<td>error</td>
+<td>janitoo_nosetests_flask.flask</td>
+<td>JNTTFlaskCommon.test_011_home_is_up</td>
+<td>98</td>
+<td>8</td>
+<td>Instance of 'JNTTFlaskCommon' has no 'assertUrl' member</td>
+</tr>
+<tr class="odd">
+<td>warning</td>
+<td>janitoo_nosetests_flask.flask</td>
+<td>&#160;</td>
+<td>26</td>
+<td>0</td>
+<td>Unused import os</td>
+</tr>
+<tr class="even">
+<td>warning</td>
+<td>janitoo_nosetests_flask.flask</td>
+<td>&#160;</td>
+<td>26</td>
+<td>0</td>
+<td>Unused import sys</td>
+</tr>
+<tr class="odd">
+<td>warning</td>
+<td>janitoo_nosetests_flask.flask</td>
+<td>&#160;</td>
+<td>27</td>
+<td>0</td>
+<td>Unused import datetime</td>
+</tr>
+<tr class="even">
+<td>warning</td>
+<td>janitoo_nosetests_flask.flask</td>
+<td>&#160;</td>
+<td>28</td>
+<td>0</td>
+<td>Unused import unittest</td>
+</tr>
+<tr class="odd">
+<td>warning</td>
+<td>janitoo_nosetests_flask.flask</td>
+<td>&#160;</td>
+<td>30</td>
+<td>0</td>
+<td>Unused import urllib2</td>
+</tr>
+<tr class="even">
+<td>warning</td>
+<td>janitoo_nosetests_flask.flask</td>
+<td>&#160;</td>
+<td>32</td>
+<td>0</td>
+<td>Unused Bower imported from flask_bower</td>
+</tr>
+<tr class="odd">
+<td>warning</td>
+<td>janitoo_nosetests_flask.flask</td>
+<td>&#160;</td>
+<td>33</td>
+<td>0</td>
+<td>Unused Cache imported from flask_cache</td>
+</tr>
+<tr class="even">
+<td>warning</td>
+<td>janitoo_nosetests_flask.flask</td>
+<td>&#160;</td>
+<td>37</td>
+<td>0</td>
+<td>Unused JNTOptions imported from janitoo.options</td>
+</tr>
+<tr class="odd">
+<td>warning</td>
+<td>janitoo_nosetests_flask.flask</td>
+<td>&#160;</td>
+<td>38</td>
+<td>0</td>
+<td>Unused create_db_engine imported from janitoo_db.base</td>
+</tr>
+<tr class="even">
+<td>warning</td>
+<td>janitoo_nosetests_flask.flask</td>
+<td>&#160;</td>
+<td>38</td>
+<td>0</td>
+<td>Unused Base imported from janitoo_db.base</td>
+</tr>
+<tr class="odd">
+<td>warning</td>
+<td>janitoo_nosetests_flask.flask</td>
+<td>&#160;</td>
+<td>39</td>
+<td>0</td>
+<td>Unused Config imported from janitoo_db.migrate as alConfig</td>
+</tr>
+<tr class="even">
+<td>warning</td>
+<td>janitoo_nosetests_flask.flask</td>
+<td>&#160;</td>
+<td>39</td>
+<td>0</td>
+<td>Unused collect_configs imported from janitoo_db.migrate</td>
+</tr>
+<tr class="odd">
+<td>warning</td>
+<td>janitoo_nosetests_flask.flask</td>
+<td>&#160;</td>
+<td>39</td>
+<td>0</td>
+<td>Unused janitoo_config imported from janitoo_db.migrate</td>
+</tr>
+<tr class="even">
+<td>refactor</td>
+<td>janitoo_nosetests_flask.flask</td>
+<td>&#160;</td>
+<td>1</td>
+<td>0</td>
