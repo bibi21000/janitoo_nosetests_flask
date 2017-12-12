@@ -61,7 +61,7 @@ class JNTTSocketIO(JNTTBase):
             pass
         time.sleep(1)
         self.client = None
-        print "Stop"
+        print("Stop")
         try:
             self.app.extensions['janitoo'].stop_listener()
         except RuntimeError:
@@ -85,7 +85,7 @@ class JNTTSocketIO(JNTTBase):
     def connect(self):
         time.sleep(1)
         self.client = self.socketio.test_client(self.app, namespace=self.namespace)
-        print 'client.sid %s' % self.client.sid
+        print('client.sid %s' % self.client.sid)
         time.sleep(1)
 
 class JNTTSocketIOCommon():
@@ -94,6 +94,6 @@ class JNTTSocketIOCommon():
     def test_001_server_connect(self):
         self.connect()
         received = self.client.get_received(self.namespace)
-        print received
+        print(received)
         self.assertTrue(len(received) >= 1)
         #~ self.assertEqual(received[0]['args'], [{'data': 'Connected'}])

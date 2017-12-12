@@ -26,14 +26,13 @@ __copyright__ = "Copyright © 2013-2014-2015-2016 Sébastien GALLET aka bibi2100
 import sys, os
 import time, datetime
 import unittest
-import urllib
-import urllib2
 
 from flask_bower import Bower
 from flask_cache import Cache
 
 from janitoo_nosetests import JNTTBase
 
+from janitoo.compat import unquote
 from janitoo.options import JNTOptions
 from janitoo_db.base import Base, create_db_engine
 from janitoo_db.migrate import Config as alConfig, collect_configs, janitoo_config
@@ -53,7 +52,7 @@ class JNTTFlask(JNTTBase):
 
     def tearDown(self):
         time.sleep(10)
-        print "Stop"
+        print("Stop")
         self.client = None
         try:
             self.app.extensions['janitoo'].stop_listener()
@@ -68,7 +67,7 @@ class JNTTFlask(JNTTBase):
 
     def assertUrl(self, url='/', code="200 OK"):
         response = self.client.get(url)
-        print response
+        print(response)
         self.assertEquals(response.status, code)
 
     def assertEndpoint(self, endpoint='static'):
@@ -84,7 +83,7 @@ class JNTTFlask(JNTTBase):
         output = []
         routes = self.get_routes()
         for route in routes:
-            line = urllib.unquote("{:50s} {:30s} {}".format(route, routes[route]['methods'], routes[route]['rule']))
+            line = unquote("{!s:50s} {!s:30s} {}".format(route, routes[route]['methods'], routes[route]['rule']))
             output.append(line)
         for line in sorted(output):
             print(line)
